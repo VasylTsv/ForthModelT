@@ -11,7 +11,7 @@ I played with the source code from that book, mainly out of curiosity, to see if
 
 The assembly language consists of 48 instructions, two of which were to deal with data. I made a couple of very small additions for this project. The virtual machine was rather underspecified so I had to make some assumptions. First of all, it could be implemented as 16-bit or 32-bit - I did not try the 32-bit implementation, and I liked the simplicity of 16-bit, so I went with that. There was no explanation how system calls are supposed to work but a simple implementation with dummy addresses trapped in the VM just worked.
 
-Overall, the "CPU" is so simple, the 6502 looks like a pinnacle of engineering next to it. It does not even have any flags, including carry (some RISC CPUs have it the same way), which makes implementing math operations very tedious. The author claims that it is similar to 8080, I failed to find any similarities. On the plus side, translating from this platform to any other should be very easy.
+Overall, the "CPU" is so simple, the 6502 looks like a pinnacle of engineering next to it. It does not even have any flags, including carry (some RISC CPUs have it the same way), which makes implementing math operations very tedious. The author claims that it is similar to 8080, I failed to find any similarities. On the plus side, translating from this platform to any other should be very easy. There are not that many words actually written in the assembler, and the core is very straightforward.
 
 Now, I initially wanted to reproduce the VM specifications here but ran into some obstacles. I could get a permission to do that from the original publisher (for a price) but that would not work with any open source license. I suspect that that part of the book itself is a reproduction of a public domain work but I could not confirm that. The original programmer (R. E. Berry) passed away even before the first edition was published and I could not locate any other authors. If anybody has any leads, please let me know. All of this is not a problem - the book is not rare by any means, and the relevant section is actually available directly from the publisher's site in its entirety - look for *Back matter* at the [Springer's book page](https://link.springer.com/book/10.1007/978-1-349-10233-4)! So, I will just assume that you have access to the book in paper or electronic form, or got that PDF from Springer.
 
@@ -22,9 +22,13 @@ I made a few small additions to the assembler. The most important one is the ext
 
 ### Structure of the project
 There are three pieces of source code in this project:
+
 `RatAsm.cpp` - the single-pass assembler.
+
 `RatExe.cpp` - the virtual machine.
+
 `RatForth.asm` - the Forth Model T itself.
+
 The implementation is compliant with [Forth 2012 standard](https://forth-standard.org/standard/words). Not all word sets are supported, see the comment in the beginning of the source code for the compliance statement.
 The system successfully completes the tests from [Gerry Jackson's test suite](https://github.com/gerryjackson/forth2012-test-suite) for all supported word sets.
 
@@ -66,3 +70,6 @@ Other that that, there are a lot of tricks that can be done with little system m
 
 - *Are the any extensions beyond Forth 2012?*
 - Yes, there are a few non-standard words. I should find some time and document them. Most of them are for internal use, so not that interesting. Executing word `STRICT` will hide all non-standard words but `EXTENDED` which reenables non-standard words.
+
+- *I have some ideas how to make it better. Do you want to hear?*
+- Absolutely! Even if you may not see recent commits here, the project is not abandoned - I will be checking on it from time to time. And, if there is some interest, it may become active.
