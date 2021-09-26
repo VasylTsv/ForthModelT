@@ -59,17 +59,17 @@ There are a few more sections of the standard that can be added to the system. S
 Other that that, there are a lot of tricks that can be done with little system modifications, like making it multitasked. 
 
 ### FAQ
-- *Why "Forth Model T"?*
-- Well, it's Forth, it is a model of a system, and my last name starts with T.
+*Why "Forth Model T"?*
+> Well, it's Forth, it is a model of a system, and my last name starts with T.
 
-- *Why all filenames start with Rat?*
-- It all started with RatC which stands for "Rationalized C," so it was RatForth in the beginning. I did not like the name and I still don't understand what exactly is "rationalized" there. But I left filenames intact.
+*Why all filenames start with Rat?*
+> It all started with RatC which stands for "Rationalized C," so it was RatForth in the beginning. I did not like the name and I still don't understand what exactly is "rationalized" there. But I left filenames intact.
 
-- *Is it completely useless?*
-- I don't think so. The core VM is so simple that it would take very little time (hours) to convert to a real-world CPU. And that would result in Forth 2012 compliant system.
+*Is it completely useless?*
+> I don't think so. The core VM is so simple that it would take very little time (hours) to convert to a real-world CPU. And that would result in Forth 2012 compliant system.
 
-- *Are the any extensions beyond Forth 2012?*
-- Yes, there are a few non-standard words. I should find some time and document them. Most of them are for internal use, so not that interesting. Executing word `STRICT` will hide all non-standard words but `EXTENDED` which reenables non-standard words.
+*Are the any extensions beyond Forth 2012?*
+> Yes, there are a few non-standard words. I should find some time and document them. Most of them are for internal use, so not that interesting. Executing word `STRICT` will hide all non-standard words but `EXTENDED` which reenables non-standard words.
 
-- *I have some ideas how to make it better. Do you want to hear?*
-- Absolutely! Even if you may not see recent commits here, the project is not abandoned - I will be checking on it from time to time. And, if there is some interest, it may become active.
+*I have some ideas how to make it better. Do you want to hear?*
+> Absolutely! Even if you may not see recent commits here, the project is not abandoned - I will be checking on it from time to time. And, if there is some interest, it may become active.
